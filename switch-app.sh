@@ -14,8 +14,9 @@ if [ -z "$APP_NAME" ]; then
     echo "Usage: ./switch-app.sh [app-name]"
     echo ""
     echo "Available apps:"
-    echo "  snacksmart  - SnackSmart AI"
-    echo "  homegym     - HomeGym Pro"
+    echo "  snacksmart    - SnackSmart AI"
+    echo "  homegym       - HomeGym Pro"
+    echo "  clarityflow   - ClarityFlow"
     echo ""
     exit 1
 fi
@@ -31,12 +32,18 @@ case "$APP_NAME" in
         URL="https://gautam-u.github.io/fitjournal-website/"
         DISPLAY_NAME="HomeGym Pro"
         ;;
+    clarityflow)
+        TITLE="ClarityFlow - Decision Tracker & Subscription Manager"
+        URL="https://gautam-u.github.io/clarityflow-website/"
+        DISPLAY_NAME="ClarityFlow"
+        ;;
     *)
         echo "❌ Error: Unknown app name '$APP_NAME'"
         echo ""
         echo "Available apps:"
-        echo "  snacksmart  - SnackSmart AI"
-        echo "  homegym     - HomeGym Pro"
+        echo "  snacksmart    - SnackSmart AI"
+        echo "  homegym       - HomeGym Pro"
+        echo "  clarityflow   - ClarityFlow"
         echo ""
         exit 1
         ;;
