@@ -1,0 +1,20 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["524F49F3UV.com.sunitha.timekit"],
+        "components": [
+          {
+            "/": "/workbill/*",
+            "comment": "Matches all Workbill deep links"
+          },
+          {
+            "/": "/workbill/event/*",
+            "comment": "Matches In-App Event deep links"
+          }
+        ]
+      }
+    ]
+  }
+}
