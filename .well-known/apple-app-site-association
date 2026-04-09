@@ -11,7 +11,20 @@
           },
           {
             "/": "/workbill/event/*",
-            "comment": "Matches In-App Event deep links"
+            "comment": "Matches Workbill In-App Event deep links"
+          }
+        ]
+      },
+      {
+        "appIDs": ["KX5NX54Q2G.com.sunitha.homeworkout"],
+        "components": [
+          {
+            "/": "/gain/*",
+            "comment": "Matches all Gain deep links"
+          },
+          {
+            "/": "/gain/event/*",
+            "comment": "Matches Gain In-App Event deep links"
           }
         ]
       }
