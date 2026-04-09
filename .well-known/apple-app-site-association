@@ -40,6 +40,19 @@
             "comment": "Matches SnackSmart In-App Event deep links"
           }
         ]
+      },
+      {
+        "appIDs": ["KX5NX54Q2G.com.sunitha.clarityflow"],
+        "components": [
+          {
+            "/": "/clarityflow/*",
+            "comment": "Matches all ClarityFlow deep links"
+          },
+          {
+            "/": "/clarityflow/event/*",
+            "comment": "Matches ClarityFlow In-App Event deep links"
+          }
+        ]
       }
     ]
   }
