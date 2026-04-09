@@ -27,6 +27,19 @@
             "comment": "Matches Gain In-App Event deep links"
           }
         ]
+      },
+      {
+        "appIDs": ["KX5NX54Q2G.com.sunitha.snacksmart"],
+        "components": [
+          {
+            "/": "/snacksmart/*",
+            "comment": "Matches all SnackSmart deep links"
+          },
+          {
+            "/": "/snacksmart/event/*",
+            "comment": "Matches SnackSmart In-App Event deep links"
+          }
+        ]
       }
     ]
   }
