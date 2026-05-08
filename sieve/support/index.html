@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Sieve</title>
+  <meta name="description" content="Support for Sieve — AI secret scanner for Mac.">
+  <link rel="icon" type="image/png" href="/sieve/assets/app-icon.png">
+  <link rel="stylesheet" href="/sieve/styles.css">
+</head>
+<body>
+<div class="shell">
+  <nav class="nav">
+    <a class="brand" href="/sieve/">
+      <img src="/sieve/assets/app-icon.png" alt="Sieve icon">
+      Sieve
+    </a>
+    <div class="nav-links">
+      <a href="/sieve/support/">Support</a>
+      <a href="/sieve/privacy/">Privacy</a>
+      <a href="https://github.com/gautam-u" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="content-page">
+      <h1>Support</h1>
+      <p class="subtitle">We're here to help. Most issues are resolved quickly.</p>
+
+      <h2>Contact</h2>
+      <p>Email us at <a href="mailto:gautamumapathy@gmail.com">gautamumapathy@gmail.com</a> and we'll reply within 24–48 hours.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h2>Why doesn't Sieve show any findings?</h2>
+      <p>A few things to check:</p>
+      <ul>
+        <li>Make sure you've granted access to at least one AI tool folder in the Grant Access sheet (first launch) or via the sandbox bookmark.</li>
+        <li>Tap the scan button (&#x25B6; icon, top right) to trigger a fresh scan after granting access.</li>
+        <li>If the AI tool folder is empty or you haven't used the tool yet, there's nothing to find — that's a good thing.</li>
+      </ul>
+
+      <h2>The Vault says "Keychain entitlement missing"</h2>
+      <p>This happens when running an unsigned or CLI build. Run Sieve from the signed Mac app (the .app in Applications). If you installed from the App Store, make sure you're launching the App Store version, not a debug build.</p>
+
+      <h2>Touch ID isn't appearing when I copy from Vault</h2>
+      <p>If your Mac doesn't have Touch ID, macOS will use your login password instead — this is expected. If neither appears, check that Sieve has the Keychain entitlement (this is only an issue in debug builds).</p>
+
+      <h2>Can Sieve read my secrets?</h2>
+      <p>No. Sieve stores only HMAC fingerprints of detected values in its database — not the raw secrets. When you copy from Vault, the value is read from macOS Keychain directly to the clipboard after biometric authentication. It is never logged or stored elsewhere by Sieve.</p>
+
+      <h2>How do I add the MCP server to Claude Code?</h2>
+      <p>Enable MCP in Sieve's Settings tab, then copy the configuration snippet shown there and paste it into your <code>~/.claude.json</code>. Restart Claude Code. The MCP toggle must stay enabled while you're using it.</p>
+
+      <h2>How do I reset everything?</h2>
+      <ul>
+        <li><strong>Findings only:</strong> Delete <code>~/Library/Application Support/Sieve/sieve.db</code></li>
+        <li><strong>Vault only:</strong> Use "Reset Vault" button in the Vault tab (requires confirmation)</li>
+        <li><strong>Complete reset:</strong> Delete the app and <code>~/Library/Application Support/Sieve/</code></li>
+      </ul>
+
+      <h2>What AI tools does Sieve scan?</h2>
+      <ul>
+        <li>Claude Code — <code>~/.claude/</code></li>
+        <li>Cursor — <code>~/Library/Application Support/Cursor/</code></li>
+        <li>VS Code (Copilot) — <code>~/Library/Application Support/Code/</code></li>
+        <li>VS Code Insiders — <code>~/Library/Application Support/Code - Insiders/</code></li>
+        <li>Windsurf — <code>~/Library/Application Support/Windsurf/</code></li>
+        <li>Codex — <code>~/.codex/</code></li>
+        <li>Project .env files — any directory you add in Settings</li>
+      </ul>
+
+      <h2>Also check out Vibe Scan</h2>
+      <p>For scanning publicly deployed web apps for exposed secrets, try <a href="https://vibe-scan.app" target="_blank">vibe-scan.app</a> — great for checking your own vibe-coded apps before sharing them.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="brand" href="/sieve/">
+        <img src="/sieve/assets/app-icon.png" alt="Sieve icon">
+        Sieve
+      </a>
+      <ul class="footer-links">
+        <li><a href="/sieve/privacy/">Privacy Policy</a></li>
+        <li><a href="/sieve/support/">Support</a></li>
+      </ul>
+      <span class="footer-copy">&copy; 2026 Sunitha. All rights reserved.</span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

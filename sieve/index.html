@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sieve — AI Secret Scanner for Mac</title>
+  <meta name="description" content="Scan your AI coding assistant history for leaked API keys, tokens, and secrets. All scanning is local — nothing leaves your Mac.">
+  <meta name="keywords" content="secret scanner, api key, security, developer tools, mac app, claude code, cursor, copilot, vault, keychain">
+  <meta property="og:title" content="Sieve — AI Secret Scanner for Mac">
+  <meta property="og:description" content="Scan your AI coding assistant history for leaked API keys, tokens, and secrets.">
+  <meta property="og:image" content="https://gautam-u.github.io/sieve/assets/app-icon-large.png">
+  <meta property="og:url" content="https://gautam-u.github.io/sieve/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/sieve/assets/app-icon.png">
+  <link rel="apple-touch-icon" href="/sieve/assets/app-icon-large.png">
+  <link rel="stylesheet" href="/sieve/styles.css">
+</head>
+<body>
+
+<div class="shell">
+  <nav class="nav">
+    <a class="brand" href="/sieve/">
+      <img src="/sieve/assets/app-icon.png" alt="Sieve icon">
+      Sieve
+    </a>
+    <div class="nav-links">
+      <a href="/sieve/support/">Support</a>
+      <a href="/sieve/privacy/">Privacy</a>
+      <a href="https://github.com/gautam-u" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Mac App · Developer Security</span>
+        <h1>Your AI chats<br>might be leaking <span>secrets</span></h1>
+        <p>Sieve scans Claude Code, Cursor, VS Code, Windsurf, and Codex history for leaked API keys, tokens, and passwords — before they cause damage. All scanning runs locally on your Mac.</p>
+        <div class="cta-row">
+          <a class="button button-primary" href="#">
+            &#8984; Download on the Mac App Store
+          </a>
+          <a class="button button-secondary" href="https://vibe-scan.app" target="_blank">
+            Try Vibe Scan &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="stat-grid">
+          <div class="stat highlight">
+            <strong>6</strong>
+            <span class="meta">AI tools scanned</span>
+          </div>
+          <div class="stat">
+            <strong>0</strong>
+            <span class="meta">bytes sent off-device</span>
+          </div>
+          <div class="stat">
+            <strong>100+</strong>
+            <span class="meta">secret patterns detected</span>
+          </div>
+          <div class="stat highlight">
+            <strong>Touch ID</strong>
+            <span class="meta">vault protection</span>
+          </div>
+        </div>
+        <div class="terminal-strip">
+          <span class="t-muted">$ sieve scan ~/.claude</span><br>
+          <span class="t-green">✓</span> 213 sources scanned<br>
+          <span class="t-red">!</span> stripe-secret-key &nbsp;<span class="t-orange">sk-live-****</span><br>
+          <span class="t-red">!</span> github-pat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-orange">ghp_****</span><br>
+          <span class="t-muted">  2 findings · vault ready</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT SIEVE SCANS -->
+    <section class="section">
+      <div class="section-label">Coverage</div>
+      <h2 class="section-title">Every AI assistant you use</h2>
+      <p class="section-sub">Sieve knows where each tool stores its chat history and scans all of them in one pass.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F916;</span>
+          <h3>Claude Code</h3>
+          <p>Scans <code style="font-size:0.82rem;color:#8b92a9">~/.claude/</code> for secrets that ended up in prompts, tool calls, or file pastes.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F4BB;</span>
+          <h3>Cursor</h3>
+          <p>Reads Cursor's Application Support SQLite databases where chat history is persisted.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F4CE;</span>
+          <h3>VS Code Copilot</h3>
+          <p>Scans both VS Code and VS Code Insiders chat history stored in <code style="font-size:0.82rem;color:#8b92a9">.vscdb</code> files.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F4A8;</span>
+          <h3>Windsurf</h3>
+          <p>Covers Windsurf's Application Support directory where conversation context is saved.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F9E0;</span>
+          <h3>Codex</h3>
+          <p>Scans <code style="font-size:0.82rem;color:#8b92a9">~/.codex/</code> for secrets that leaked through Codex CLI sessions.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F4C4;</span>
+          <h3>.env Files</h3>
+          <p>Scans project directories you configure for <code style="font-size:0.82rem;color:#8b92a9">.env</code> files with exposed credentials.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">Scan. Identify. Secure.</h2>
+      <p class="section-sub">No setup required. Grant access to your AI tool folders once, then Sieve handles the rest.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Grant Access Once</h4>
+          <p>On first launch, click Grant Access for each AI tool. A standard Open dialog pre-navigated to the right folder — you click Open once, never asked again.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Scan Runs Automatically</h4>
+          <p>Sieve scans chat databases and .env files, matching 100+ secret patterns derived from Gitleaks rulesets — all on-device, no cloud.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Review Findings</h4>
+          <p>Findings are shown with redacted previews — never the raw value. Each finding links to the source file, rule, and rotation status.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Store in Vault</h4>
+          <p>Rotate your leaked key and store the new value in Sieve Vault — backed by macOS Keychain. Copying requires Touch ID.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <div class="section-label">Features</div>
+      <h2 class="section-title">More than a scanner</h2>
+      <p class="section-sub">Sieve is a full secrets management workflow — from detection to rotation to secure storage.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F512;</span>
+          <h3>Touch ID Vault</h3>
+          <p>Store rotated secrets in macOS Keychain. Copy them with Touch ID or device password. Raw values are never displayed — copy only.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F9F9;</span>
+          <h3>SQLite Redaction</h3>
+          <p>Redact secrets directly from VS Code chat database files in place. Sieve automatically backs up the database before making any changes.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F916;</span>
+          <h3>MCP Integration</h3>
+          <p>Local MCP server for Claude Code. Let Claude query your findings, check secret exposure, and run commands with vault-injected credentials.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F4CA;</span>
+          <h3>Rotation Tracking</h3>
+          <p>Mark secrets as rotated, revoked, or rotation-due. Track which findings have been handled and which still need attention.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F50E;</span>
+          <h3>100+ Detection Rules</h3>
+          <p>Detects Stripe keys, GitHub PATs, AWS credentials, OpenAI keys, Anthropic keys, database URLs, JWT secrets, and dozens more.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F4F1;</span>
+          <h3>Also Try Vibe Scan</h3>
+          <p>Scan publicly deployed web apps for exposed secrets. Great for checking your own vibe-coded apps before sharing. <a href="https://vibe-scan.app" target="_blank" style="color:#00c896">vibe-scan.app &rarr;</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="section">
+      <div class="section-label">Privacy</div>
+      <h2 class="section-title">Your secrets stay secret</h2>
+      <p class="section-sub">Sieve is built by a security tool for developers — privacy is non-negotiable.</p>
+
+      <div class="privacy-banner">
+        <div class="privacy-item">
+          <span class="icon">&#x1F4F5;</span>
+          <strong>No network requests</strong>
+          <span>Scanning runs 100% on your Mac</span>
+        </div>
+        <div class="privacy-item">
+          <span class="icon">&#x1F511;</span>
+          <strong>Keychain only</strong>
+          <span>Secrets stored in macOS Keychain, never in the database</span>
+        </div>
+        <div class="privacy-item">
+          <span class="icon">&#x1F46E;</span>
+          <strong>No account needed</strong>
+          <span>No email, no sign-in, no cloud sync</span>
+        </div>
+        <div class="privacy-item">
+          <span class="icon">&#x1F9EA;</span>
+          <strong>Fingerprints only</strong>
+          <span>Database stores HMAC fingerprints, never plaintext</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="brand" href="/sieve/">
+        <img src="/sieve/assets/app-icon.png" alt="Sieve icon">
+        Sieve
+      </a>
+      <ul class="footer-links">
+        <li><a href="/sieve/privacy/">Privacy Policy</a></li>
+        <li><a href="/sieve/support/">Support</a></li>
+        <li><a href="https://vibe-scan.app" target="_blank">Vibe Scan</a></li>
+        <li><a href="https://github.com/gautam-u" target="_blank">GitHub</a></li>
+      </ul>
+      <span class="footer-copy">&copy; 2026 Sunitha. All rights reserved.</span>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

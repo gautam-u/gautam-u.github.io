@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Sieve</title>
+  <meta name="description" content="Sieve privacy policy. No data collection. Everything stays on your Mac.">
+  <link rel="icon" type="image/png" href="/sieve/assets/app-icon.png">
+  <link rel="stylesheet" href="/sieve/styles.css">
+</head>
+<body>
+<div class="shell">
+  <nav class="nav">
+    <a class="brand" href="/sieve/">
+      <img src="/sieve/assets/app-icon.png" alt="Sieve icon">
+      Sieve
+    </a>
+    <div class="nav-links">
+      <a href="/sieve/support/">Support</a>
+      <a href="/sieve/privacy/">Privacy</a>
+      <a href="https://github.com/gautam-u" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="content-page">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Last updated: May 7, 2026</p>
+
+      <div class="badge-row">
+        <span class="badge">No data collected</span>
+        <span class="badge">No network requests</span>
+        <span class="badge">No account required</span>
+        <span class="badge">No analytics</span>
+      </div>
+
+      <h2>The Short Version</h2>
+      <p>Sieve does not collect, transmit, or store any data outside of your Mac. Everything — scan results, secret fingerprints, vault entries — stays entirely on your device. We cannot access your data because we have no server to receive it.</p>
+
+      <h2>What Sieve Stores Locally</h2>
+      <ul>
+        <li><strong>Findings database</strong> — A local SQLite file at <code>~/Library/Application Support/Sieve/sieve.db</code> containing finding metadata: rule ID, source path, redacted preview, and an HMAC fingerprint of the detected value. The raw secret value is never written to this database.</li>
+        <li><strong>Vault entries</strong> — Secrets you explicitly store are saved in macOS Keychain under the service namespace <code>com.sieve.vault.macapp</code>. Only you can read them; they require Touch ID or your Mac login password to copy.</li>
+        <li><strong>Sandbox bookmarks</strong> — Security-scoped bookmarks are stored in UserDefaults so Sieve can access your AI tool directories across launches without asking again.</li>
+        <li><strong>MCP settings</strong> — Whether the MCP server is enabled, stored in <code>~/Library/Application Support/Sieve/mcp-settings.json</code>.</li>
+      </ul>
+
+      <h2>What Sieve Never Does</h2>
+      <div class="badge-row">
+        <span class="badge red">No telemetry</span>
+        <span class="badge red">No crash reports</span>
+        <span class="badge red">No analytics</span>
+        <span class="badge red">No advertising</span>
+        <span class="badge red">No cloud sync</span>
+        <span class="badge red">No plaintext secrets in DB</span>
+      </div>
+      <ul>
+        <li>Does not make any network requests</li>
+        <li>Does not send scan results to any server</li>
+        <li>Does not collect usage statistics</li>
+        <li>Does not use third-party analytics SDKs</li>
+        <li>Does not store raw secret values anywhere except macOS Keychain</li>
+        <li>Does not sync data to iCloud</li>
+      </ul>
+
+      <h2>The MCP Server</h2>
+      <p>When you enable the MCP server in Settings, Sieve launches <code>sieve-mcp</code> — a local stdio binary that Claude Code communicates with over standard input/output on your Mac. It is not a network service. It does not open a network port. MCP tool responses never contain raw secret values; only fingerprints and redacted metadata are returned.</p>
+
+      <h2>File Access</h2>
+      <p>Sieve uses Apple's security-scoped bookmarks to read AI tool directories you grant access to via the standard macOS Open dialog. Access is limited to the specific folders you select. Sieve requests read-only access to these paths and does not write to them (except when you explicitly use the SQLite redaction feature, which creates a backup first).</p>
+
+      <h2>Deletion</h2>
+      <p>To remove all Sieve data:</p>
+      <ul>
+        <li>Delete the app — removes the application and its container</li>
+        <li>Delete <code>~/Library/Application Support/Sieve/</code> — removes the findings database and settings</li>
+        <li>Open Keychain Access → search for <code>com.sieve.vault.macapp</code> → delete entries — removes vault secrets</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy: <a href="mailto:gautamumapathy@gmail.com">gautamumapathy@gmail.com</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="brand" href="/sieve/">
+        <img src="/sieve/assets/app-icon.png" alt="Sieve icon">
+        Sieve
+      </a>
+      <ul class="footer-links">
+        <li><a href="/sieve/privacy/">Privacy Policy</a></li>
+        <li><a href="/sieve/support/">Support</a></li>
+      </ul>
+      <span class="footer-copy">&copy; 2026 Sunitha. All rights reserved.</span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
