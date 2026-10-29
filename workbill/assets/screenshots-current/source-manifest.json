@@ -1,0 +1,18 @@
+{
+  "app": "Workbill",
+  "version": "1.0.5",
+  "capturedOrVerified": "2026-10-28",
+  "note": "Screens captured from Workbill 1.0.5 in the simulator, with no client records.",
+  "files": [
+    {
+      "file": "01.png",
+      "source": "workbill-home.png",
+      "label": "Home"
+    },
+    {
+      "file": "02.png",
+      "source": "workbill-current.png",
+      "label": "Get started"
+    }
+  ]
+}
