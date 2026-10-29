@@ -75,6 +75,10 @@
       <h2>Purchases</h2>
       <p>Apple processes App Store downloads, in-app purchases, and restore requests. Sieve uses StoreKit to verify entitlement and product information; the developer does not receive your payment-card details. Apple may process purchase and account information under its own privacy policy.</p>
 
+      <h2>This Website's Limited Analytics</h2>
+      <p>The Sieve landing page records page visits and App Store-link clicks in the developer's existing PostHog project, relayed through VibeScan. It sends only an event name, fixed referral labels, and a random identifier that lasts for the current page document. No cookies, persistent visitor IDs, cross-site identity linking, session replay, form contents, full URLs, app findings, or vault data are collected by this script. These counts measure landing instances and outbound intent, not unique people, installs, or purchases.</p>
+      <p>The relay and its hosting provider receive ordinary request information such as IP address for delivery and abuse prevention. The relay does not forward the visitor's IP, browser user-agent, or referrer to PostHog and disables person profiles and GeoIP enrichment for these events. The script honors Global Privacy Control and Do Not Track. Privacy and support pages do not run it. The app's no-usage-analytics statement above applies to the Mac app, not these limited website events.</p>
+
       <h2>File Access</h2>
       <p>Sieve uses Apple's security-scoped bookmarks to read AI tool directories you grant access to via the standard macOS Open dialog. Access is limited to the specific folders you select. Sieve requests read-only access to these paths and does not write to them (except when you explicitly use the SQLite redaction feature, which creates a backup first).</p>
 
