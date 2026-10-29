@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Sieve</title>
-  <meta name="description" content="Sieve privacy policy. No data collection. Everything stays on your Mac.">
+  <meta name="description" content="Sieve privacy: local scanning and storage, optional OSV advisory requests, separately enabled MCP sharing, and Apple purchase services.">
   <link rel="icon" type="image/png" href="/sieve/assets/app-icon.png">
   <link rel="stylesheet" href="/sieve/styles.css">
 </head>
@@ -25,17 +25,17 @@
   <main>
     <div class="content-page">
       <h1>Privacy Policy</h1>
-      <p class="subtitle">Last updated: May 7, 2026</p>
+      <p class="subtitle">Updated for the new release: October 28, 2026</p>
 
       <div class="badge-row">
-        <span class="badge">No data collected</span>
-        <span class="badge">No network requests</span>
+        <span class="badge">Local-first scanning</span>
+        <span class="badge">Explicit sharing controls</span>
         <span class="badge">No account required</span>
         <span class="badge">No analytics</span>
       </div>
 
       <h2>The Short Version</h2>
-      <p>Sieve does not collect, transmit, or store any data outside of your Mac. Everything — scan results, secret fingerprints, vault entries — stays entirely on your device. We cannot access your data because we have no server to receive it.</p>
+      <p>Secret matching and dependency inventory run locally. Sieve does not operate a developer-hosted findings service or include third-party usage analytics. The new release can contact Google OSV for advisory checks with your consent, share saved evidence with an MCP client you enable, and use Apple's purchase and entitlement services. Those optional connections mean it would be inaccurate to promise that no data ever leaves your Mac.</p>
 
       <h2>What Sieve Stores Locally</h2>
       <ul>
@@ -43,6 +43,7 @@
         <li><strong>Vault entries</strong> — Secrets you explicitly store are saved in macOS Keychain under the service namespace <code>com.sieve.vault.macapp</code>. Only you can read them; they require Touch ID or your Mac login password to copy.</li>
         <li><strong>Sandbox bookmarks</strong> — Security-scoped bookmarks are stored in UserDefaults so Sieve can access your AI tool directories across launches without asking again.</li>
         <li><strong>MCP settings</strong> — Whether the MCP server is enabled, stored in <code>~/Library/Application Support/Sieve/mcp-settings.json</code>.</li>
+        <li><strong>Project security evidence</strong> — Project names, selected-folder bookmarks, relative manifest paths, package names and versions, advisory matches, coverage warnings, check history, comparison summaries, and monitoring preferences are saved locally. Storage paths may be inside the app's macOS sandbox container.</li>
       </ul>
 
       <h2>What Sieve Never Does</h2>
@@ -55,16 +56,24 @@
         <span class="badge red">No plaintext secrets in DB</span>
       </div>
       <ul>
-        <li>Does not make any network requests</li>
-        <li>Does not send scan results to any server</li>
+        <li>Does not upload source files, environment-file contents, or vault values for OSV dependency checks</li>
+        <li>Does not send findings to a developer-operated cloud dashboard</li>
         <li>Does not collect usage statistics</li>
         <li>Does not use third-party analytics SDKs</li>
         <li>Does not store raw secret values anywhere except macOS Keychain</li>
         <li>Does not sync data to iCloud</li>
       </ul>
 
-      <h2>The MCP Server</h2>
-      <p>When you enable the MCP server in Settings, Sieve launches <code>sieve-mcp</code> — a local stdio binary that Claude Code communicates with over standard input/output on your Mac. It is not a network service. It does not open a network port. MCP tool responses never contain raw secret values; only fingerprints and redacted metadata are returned.</p>
+      <h2>Optional OSV Advisory Checks and Monitoring</h2>
+      <p>With per-check consent or per-project monitoring consent, Sieve sends supported public package names, versions, and ecosystem identifiers to Google's OSV advisory service. It does not send source code, project-folder paths, environment files, or secret values in those requests. OSV also receives ordinary network-request information such as your IP address. Its handling is governed by the service provider's policies. Private or unsupported coordinates are skipped and reported as coverage limitations rather than uploaded.</p>
+      <p>Monitoring repeats these requests at the selected interval while Sieve is running and the Mac is awake. Turn monitoring off in the project's controls to stop scheduled requests. Existing saved results remain on your Mac.</p>
+
+      <h2>The MCP Server and Your AI Provider</h2>
+      <p>The local <code>sieve-mcp</code> server communicates over standard input/output; it does not open a public network port. Project sharing requires a separate global sharing switch. When enabled, a connected client can read saved project names, relative manifest paths, package names and versions, advisory findings, coverage, and check summaries. The connected assistant may send these responses to its model provider under that provider's policies. Local transport does not mean the assistant keeps the responses on-device.</p>
+      <p>Read-only project tools do not run scans or fixes, grant folder access, or return raw secrets. Other secret-related MCP tools have separate controls; vault-injected command execution is a distinct, sensitive permission. Disable project sharing to revoke project-tool access.</p>
+
+      <h2>Purchases</h2>
+      <p>Apple processes App Store downloads, in-app purchases, and restore requests. Sieve uses StoreKit to verify entitlement and product information; the developer does not receive your payment-card details. Apple may process purchase and account information under its own privacy policy.</p>
 
       <h2>File Access</h2>
       <p>Sieve uses Apple's security-scoped bookmarks to read AI tool directories you grant access to via the standard macOS Open dialog. Access is limited to the specific folders you select. Sieve requests read-only access to these paths and does not write to them (except when you explicitly use the SQLite redaction feature, which creates a backup first).</p>
@@ -72,8 +81,8 @@
       <h2>Deletion</h2>
       <p>To remove all Sieve data:</p>
       <ul>
-        <li>Delete the app — removes the application and its container</li>
-        <li>Delete <code>~/Library/Application Support/Sieve/</code> — removes the findings database and settings</li>
+        <li>Turn off project monitoring and MCP sharing before removing local records.</li>
+        <li>Removing the app alone may leave its sandbox container, Application Support files, and Keychain entries. Use the app's reset controls where available, or contact support for help locating your installation's local records.</li>
         <li>Open Keychain Access → search for <code>com.sieve.vault.macapp</code> → delete entries — removes vault secrets</li>
       </ul>
 

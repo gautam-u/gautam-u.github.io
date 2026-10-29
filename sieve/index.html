@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sieve — AI Secret Scanner for Mac</title>
-  <meta name="description" content="Scan your AI coding assistant history for leaked API keys, tokens, and secrets. All scanning is local — nothing leaves your Mac.">
+  <title>Sieve — Local Security Dashboard for Mac</title>
+  <meta name="description" content="Review dependency advisories and exposed credentials in one Mac workspace. Local inventory, opt-in OSV monitoring, and read-only project MCP in the new release.">
   <meta name="keywords" content="secret scanner, api key, security, developer tools, mac app, claude code, cursor, copilot, vault, keychain">
-  <meta property="og:title" content="Sieve — AI Secret Scanner for Mac">
-  <meta property="og:description" content="Scan your AI coding assistant history for leaked API keys, tokens, and secrets.">
+  <meta property="og:title" content="Sieve — Local Security Dashboard for Mac">
+  <meta property="og:description" content="Dependency vulnerabilities, exposed credentials, and saved evidence for your AI assistant — in one local workspace.">
   <meta property="og:image" content="https://gautam-u.github.io/sieve/assets/app-icon-large.png">
   <meta property="og:url" content="https://gautam-u.github.io/sieve/">
   <meta name="twitter:card" content="summary">
@@ -36,11 +36,12 @@
     <section class="hero">
       <div class="hero-copy">
         <span class="eyebrow">Mac App · Developer Security</span>
-        <h1>Your AI chats<br>might be leaking <span>secrets</span></h1>
-        <p>Sieve scans Claude Code, Cursor, VS Code, Windsurf, and Codex history for leaked API keys, tokens, and passwords — before they cause damage. All scanning runs locally on your Mac.</p>
+        <h1>Project security.<br><span>At a glance.</span></h1>
+        <p>Dependency vulnerabilities and exposed credentials in one Mac dashboard. See severity counts, track changes, and share saved evidence with your AI assistant.</p>
+        <p><strong>New release:</strong> opt-in monitoring and read-only project MCP. Preparing for App Review; not yet in the public App Store version.</p>
         <div class="cta-row">
           <a class="button button-primary" href="https://apps.apple.com/us/app/sieve-secret-scanner/id6767409365?mt=12" target="_blank">
-            &#8984; Download on the Mac App Store
+            &#8984; View current Mac App Store version
           </a>
           <a class="button button-secondary" href="https://vibe-scan.app" target="_blank">
             Try Vibe Scan &rarr;
@@ -51,16 +52,16 @@
       <div class="hero-card">
         <div class="stat-grid">
           <div class="stat highlight">
-            <strong>6</strong>
-            <span class="meta">AI tools scanned</span>
+            <strong>Severity</strong>
+            <span class="meta">Critical through Unknown</span>
           </div>
           <div class="stat">
-            <strong>0</strong>
-            <span class="meta">bytes sent off-device</span>
+            <strong>Opt-in</strong>
+            <span class="meta">OSV advisory checks</span>
           </div>
           <div class="stat">
-            <strong>100+</strong>
-            <span class="meta">secret patterns detected</span>
+            <strong>MCP</strong>
+            <span class="meta">read-only project evidence</span>
           </div>
           <div class="stat highlight">
             <strong>Touch ID</strong>
@@ -68,19 +69,31 @@
           </div>
         </div>
         <div class="terminal-strip">
-          <span class="t-muted">$ sieve scan ~/.claude</span><br>
-          <span class="t-green">✓</span> 213 sources scanned<br>
-          <span class="t-red">!</span> stripe-secret-key &nbsp;<span class="t-orange">sk-live-****</span><br>
-          <span class="t-red">!</span> github-pat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-orange">ghp_****</span><br>
-          <span class="t-muted">  2 findings · vault ready</span>
+          <span class="t-muted">Illustrative workflow — not a live scan</span><br>
+          <span class="t-green">1.</span> Add a local project folder<br>
+          <span class="t-orange">2.</span> Review severity and coverage<br>
+          <span class="t-green">3.</span> Ask your assistant about saved findings<br>
+          <span class="t-muted">You review and approve every fix.</span>
         </div>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">New release · Project security</div>
+      <h2 class="section-title">Know what changed. Know what to do next.</h2>
+      <p class="section-sub">A dependency inventory does not need AI. Use an assistant when you want help understanding or fixing the evidence.</p>
+      <div class="features-grid">
+        <div class="feature-card"><h3>One security overview</h3><p>Review secrets and dependency advisory matches with labeled severity colors. Open the filtered findings behind each number; coverage warnings stay separate from vulnerability counts.</p></div>
+        <div class="feature-card"><h3>Advisories on your schedule</h3><p>Choose supported local project folders. Explicitly opt in to OSV checks and hourly or two-hour monitoring while Sieve is running and your Mac is awake. Last-check and next-check times make freshness visible.</p></div>
+        <div class="feature-card"><h3>Evidence for your assistant</h3><p>Separately enable read-only project MCP to share saved package versions, advisory matches, and coverage. This does not grant source access, run fixes, or expose vault values.</p></div>
+      </div>
+      <p class="section-sub">New and changed findings are compared with a complete prior check. Missing evidence is unknown, not proof of safety. A disappeared match is not a verified fix, and local dependencies are not proof of what is deployed.</p>
     </section>
 
     <!-- WHAT SIEVE SCANS -->
     <section class="section">
       <div class="section-label">Coverage</div>
-      <h2 class="section-title">Every AI assistant you use</h2>
+      <h2 class="section-title">Local AI histories and environment files</h2>
       <p class="section-sub">Sieve knows where each tool stores its chat history and scans all of them in one pass.</p>
 
       <div class="features-grid">
@@ -121,13 +134,13 @@
     <section class="section">
       <div class="section-label">How it works</div>
       <h2 class="section-title">Scan. Identify. Secure.</h2>
-      <p class="section-sub">No setup required. Grant access to your AI tool folders once, then Sieve handles the rest.</p>
+      <p class="section-sub">Choose which local folders Sieve can read. Advisory monitoring and assistant sharing each require separate consent.</p>
 
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
           <h4>Grant Access Once</h4>
-          <p>On first launch, click Grant Access for each AI tool. A standard Open dialog pre-navigated to the right folder — you click Open once, never asked again.</p>
+          <p>Select the folders you want Sieve to read. macOS bookmarks remember approved access; moved folders or revoked permissions may require reconnecting.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
@@ -151,7 +164,7 @@
     <section class="section">
       <div class="section-label">Features</div>
       <h2 class="section-title">More than a scanner</h2>
-      <p class="section-sub">Sieve is a full secrets management workflow — from detection to rotation to secure storage.</p>
+      <p class="section-sub">Review exposure, track remediation, and keep sensitive vault access behind macOS authentication.</p>
 
       <div class="features-grid">
         <div class="feature-card">
@@ -166,8 +179,8 @@
         </div>
         <div class="feature-card">
           <span class="feature-icon">&#x1F916;</span>
-          <h3>MCP Integration</h3>
-          <p>Local MCP server for Claude Code. Let Claude query your findings, check secret exposure, and run commands with vault-injected credentials.</p>
+          <h3>Permissioned MCP Integration</h3>
+          <p>Connect compatible assistants to saved evidence through local stdio MCP. Project sharing is separately opt-in; legacy secret and vault-execution tools have separate controls and are not enabled by project sharing.</p>
         </div>
         <div class="feature-card">
           <span class="feature-icon">&#x1F4CA;</span>
@@ -196,8 +209,8 @@
       <div class="privacy-banner">
         <div class="privacy-item">
           <span class="icon">&#x1F4F5;</span>
-          <strong>No network requests</strong>
-          <span>Scanning runs 100% on your Mac</span>
+          <strong>Local-first, explicit sharing</strong>
+          <span>Local inventory and secret matching; optional OSV checks and MCP sharing</span>
         </div>
         <div class="privacy-item">
           <span class="icon">&#x1F511;</span>
@@ -211,8 +224,8 @@
         </div>
         <div class="privacy-item">
           <span class="icon">&#x1F9EA;</span>
-          <strong>Fingerprints only</strong>
-          <span>Database stores HMAC fingerprints, never plaintext</span>
+          <strong>Saved evidence, not raw secrets</strong>
+          <span>Redacted secret metadata and local project/advisory snapshots</span>
         </div>
       </div>
     </section>

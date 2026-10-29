@@ -32,6 +32,15 @@
 
       <h2>Frequently Asked Questions</h2>
 
+      <h2>What is new in the dependency dashboard?</h2>
+      <p>The new release combines secret findings and saved dependency advisories in a severity-colored overview. Add a supported local project, review its package inventory, and explicitly allow an OSV advisory check. The release is being prepared for App Review; features may differ from the currently published App Store version.</p>
+
+      <h2>How fresh are project findings?</h2>
+      <p>Enable hourly or two-hour monitoring separately for each project to allow scheduled OSV requests. Sieve must be running and your Mac awake. Check the displayed last-check, next-check, and coverage state; a failed check retains earlier evidence rather than showing a misleading zero. Local project results do not establish what version is deployed online.</p>
+
+      <h2>Can my AI assistant read the dependency findings?</h2>
+      <p>Enable MCP and separately enable project snapshot sharing, then use Sieve's connection instructions for your compatible client. Sharing exposes saved project names, relative manifest paths, package versions, and advisory evidence to that client and potentially its model provider. It does not grant source-folder access or permission to fix code. Vault execution remains a separate permission.</p>
+
       <h2>Why doesn't Sieve show any findings?</h2>
       <p>A few things to check:</p>
       <ul>
@@ -47,7 +56,7 @@
       <p>If your Mac doesn't have Touch ID, macOS will use your login password instead — this is expected. If neither appears, check that Sieve has the Keychain entitlement (this is only an issue in debug builds).</p>
 
       <h2>Can Sieve read my secrets?</h2>
-      <p>No. Sieve stores only HMAC fingerprints of detected values in its database — not the raw secrets. When you copy from Vault, the value is read from macOS Keychain directly to the clipboard after biometric authentication. It is never logged or stored elsewhere by Sieve.</p>
+      <p>Sieve must read selected files locally to detect secrets. It stores redacted finding metadata and HMAC fingerprints, not raw secret values, in the findings database. Vault values are stored in macOS Keychain and require macOS authentication for sensitive access. Optional dependency advisory requests do not include secret values.</p>
 
       <h2>How do I add the MCP server to Claude Code?</h2>
       <p>Enable MCP in Sieve's Settings tab, then copy the configuration snippet shown there and paste it into your <code>~/.claude.json</code>. Restart Claude Code. The MCP toggle must stay enabled while you're using it.</p>
