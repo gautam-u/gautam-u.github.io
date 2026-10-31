@@ -1,18 +1,23 @@
 {
   "app": "Workbill",
-  "version": "1.0.5",
-  "capturedOrVerified": "2026-10-28",
-  "note": "Screens captured from Workbill 1.0.5 in the simulator, with no client records.",
+  "version": "1.0.6 (34)",
+  "capturedOrVerified": "2026-10-31",
+  "note": "Simulator UI tests use demonstration records; the current App Store version may differ.",
   "files": [
     {
       "file": "01.png",
-      "source": "workbill-home.png",
+      "source": "workbill-store-home-current.xcresult: testHomeTab_ShowsEarningsAndCTAs",
       "label": "Home"
     },
     {
       "file": "02.png",
-      "source": "workbill-current.png",
-      "label": "Get started"
+      "source": "workbill-store-shots-current.xcresult: testQuotesTab_CreateQuoteWithLineItem",
+      "label": "Quotes"
+    },
+    {
+      "file": "03.png",
+      "source": "workbill-store-shots-current.xcresult: testMoneyTab_CreateDirectInvoice_WithLineItem",
+      "label": "Money"
     }
   ]
 }
